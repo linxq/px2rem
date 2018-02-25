@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.workspace.onDidChangeTextDocument((event)=>{
         px2Rem(event);
     });
-
+    // convert px to rem
     function px2Rem (event1: vscode.TextDocumentChangeEvent) {
         const editor: vscode.TextEditor|undefined = vscode.window.activeTextEditor;
         if (!editor) {
