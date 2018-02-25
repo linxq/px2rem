@@ -1,0 +1,67 @@
+{
+    "name": "p2r",
+    "displayName": "p2r",
+    "description": "p2r",
+    "version": "0.0.1",
+    "publisher": "p2r",
+    "icon": "images/logo.jpg",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "keywords": [
+        "rem",
+        "css",
+        "px",
+        "sass"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/linxq/px2rem.git"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        "configuration": [
+            {
+                "title": "p2r",
+                "properties": {
+                    "p2r.postfix": {
+                        "type": "Array",
+                        "default": [".vue",".css",".sass"],
+                        "description": "the fix with those postfixs  which the need to deal"
+                    },
+                    "p2r.ratio": {
+                        "type": "Number",
+                        "default": 75,
+                        "description": "the ratio px/rem"
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
